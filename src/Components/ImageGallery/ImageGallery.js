@@ -15,7 +15,6 @@ export default function ImageGallery({ searchValue, pageNum, setPageNum }) {
 
   function getData() {
     setLoading(true);
-    setTimeout(() => {
       imagesApi
         .fetchImagesWithQuery(searchValue, pageNum)
         .then((data) => {
@@ -35,7 +34,6 @@ export default function ImageGallery({ searchValue, pageNum, setPageNum }) {
           setLoading(false);
           setPageNum((prevState) => prevState + 1);
         });
-    }, 200);
   }
 
   useEffect(() => {
